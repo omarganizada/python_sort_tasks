@@ -1,0 +1,25 @@
+import random
+def bubble_sort(x):
+    len_x = lenn(x)
+    for i in range(len_x):
+        for j in range(len_x - i - 1):
+            if x[j] < x[j+1]:
+                x[j] , x[j + 1] = x[j+1] , x[j]
+    return x
+def lenn(x):
+    l = 0
+    for i in x:
+        l += 1
+    return l
+a = [random.randint(-100, 101) for i in range(6)]
+new_a = bubble_sort(a)
+s = 0
+for i in range(lenn(a)):
+    if new_a[i] > 0: #54 45 32 -3 -24 -83
+        s += 1
+    else:
+        break
+netice = new_a[:s] + new_a[:s-1:-1]
+print(f"Massiv:{a}")
+print(f"Netice:{netice}")
+print(f"Musbet elementlerin sayi:{s}")
